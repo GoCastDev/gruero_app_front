@@ -1,0 +1,662 @@
+/* @import "tailwindcss";
+
+@layer base {
+  * MODO CLARO (Safety-Critical Industrial Light) *
+  :root {
+    --bg-main: #F5F5F5;
+    --bg-card: #FFFFFF;
+    --bg-card-border: #E5E5E5;
+    --text-main: #1A1A1A;
+    --text-muted: #666666;
+    
+    --color-primary: #FF8C00;
+    --color-secondary: #272727;
+    --color-tertiary: #1EC35C;
+  }
+
+  /* MODO OSCURO (Gocast/Sigis Operational Drive) *
+  .dark {
+    --bg-main: #1A1A1A;
+    --bg-card: #262626;
+    --bg-card-border: #333333;
+    --text-main: #F5F5F5;
+    --text-muted: #A3A3A3;
+    
+    --color-primary: #FF8C00;
+    --color-secondary: #F59E0B;
+    --color-tertiary: #22C55E;
+  }
+
+   body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  } 
+} */
+
+@import "tailwindcss";
+
+/*
+|--------------------------------------------------------------------------
+| Tailwind 4 - Dark mode controlado por clase
+|--------------------------------------------------------------------------
+|
+| Esto permite que dark: funcione cuando Header.jsx agrega la clase
+| .dark al elemento <html>.
+|
+*/
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+/*
+|--------------------------------------------------------------------------
+| GOCAST DESIGN SYSTEM
+|--------------------------------------------------------------------------
+*/
+
+@layer base {
+
+  /* ============================================================
+     LIGHT MODE
+     ============================================================ */
+
+  :root {
+    /*
+    |--------------------------------------------------------------------------
+    | Brand
+    |--------------------------------------------------------------------------
+    */
+
+    --color-primary: #3B476E;
+    --color-primary-hover: #303A5B;
+    --color-primary-active: #29324F;
+
+    --color-primary-soft: #EEF1F8;
+    --color-primary-soft-hover: #E4E8F3;
+
+    --color-on-primary: #FFFFFF;
+
+    /*
+    |--------------------------------------------------------------------------
+    | Secondary / Accent
+    |--------------------------------------------------------------------------
+    */
+
+    --color-secondary: #53618B;
+    --color-accent: #4379D1;
+
+    /*
+    |--------------------------------------------------------------------------
+    | App surfaces
+    |--------------------------------------------------------------------------
+    */
+
+    --bg-main: #F5F7FA;
+    --bg-card: #FFFFFF;
+    --bg-card-secondary: #F8F9FC;
+    --bg-card-border: #E6E9F0;
+
+    --bg-elevated: #FFFFFF;
+    --bg-muted: #EEF1F5;
+
+    /*
+    |--------------------------------------------------------------------------
+    | Typography
+    |--------------------------------------------------------------------------
+    */
+
+    --text-main: #182033;
+    --text-secondary: #424B61;
+    --text-muted: #7B8498;
+    --text-disabled: #AEB5C2;
+
+    /*
+    |--------------------------------------------------------------------------
+    | Semantic colors
+    |--------------------------------------------------------------------------
+    */
+
+    --color-success: #16A36A;
+    --color-success-soft: #E9F8F1;
+
+    --color-warning: #E99A22;
+    --color-warning-soft: #FFF6E7;
+
+    --color-danger: #D94C5C;
+    --color-danger-soft: #FDEEEF;
+
+    --color-info: #3977D4;
+    --color-info-soft: #EDF4FF;
+
+    /*
+    |--------------------------------------------------------------------------
+    | Map / route
+    |--------------------------------------------------------------------------
+    */
+
+    --color-route: #4379D1;
+    --color-origin: #3977D4;
+    --color-destination: #16A36A;
+
+    /*
+    |--------------------------------------------------------------------------
+    | Shadows
+    |--------------------------------------------------------------------------
+    */
+
+    --shadow-xs:
+      0 1px 2px rgba(20, 30, 55, 0.04);
+
+    --shadow-sm:
+      0 2px 8px rgba(20, 30, 55, 0.06);
+
+    --shadow-card:
+      0 8px 24px rgba(20, 30, 55, 0.07);
+
+    --shadow-floating:
+      0 14px 38px rgba(20, 30, 55, 0.13);
+
+    /*
+    |--------------------------------------------------------------------------
+    | Layout
+    |--------------------------------------------------------------------------
+    */
+
+    --header-height: 68px;
+    --bottom-nav-height: 72px;
+
+    /*
+    |--------------------------------------------------------------------------
+    | Radius
+    |--------------------------------------------------------------------------
+    */
+
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 18px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    color-scheme: light;
+  }
+
+
+  /* ============================================================
+     DARK MODE
+     ============================================================ */
+
+  .dark {
+    /*
+    |--------------------------------------------------------------------------
+    | Brand
+    |--------------------------------------------------------------------------
+    */
+
+    --color-primary: #8290BE;
+    --color-primary-hover: #929FCA;
+    --color-primary-active: #A2ADD3;
+
+    --color-primary-soft: #2D344B;
+    --color-primary-soft-hover: #343C56;
+
+    --color-on-primary: #FFFFFF;
+
+    /*
+    |--------------------------------------------------------------------------
+    | Secondary / Accent
+    |--------------------------------------------------------------------------
+    */
+
+    --color-secondary: #AAB4D6;
+    --color-accent: #78A7F1;
+
+    /*
+    |--------------------------------------------------------------------------
+    | App surfaces
+    |--------------------------------------------------------------------------
+    */
+
+    --bg-main: #11141D;
+    --bg-card: #191E2A;
+    --bg-card-secondary: #202634;
+    --bg-card-border: #2A3141;
+
+    --bg-elevated: #222938;
+    --bg-muted: #272E3D;
+
+    /*
+    |--------------------------------------------------------------------------
+    | Typography
+    |--------------------------------------------------------------------------
+    */
+
+    --text-main: #F5F7FB;
+    --text-secondary: #CFD5E3;
+    --text-muted: #929BAD;
+    --text-disabled: #646D7E;
+
+    /*
+    |--------------------------------------------------------------------------
+    | Semantic
+    |--------------------------------------------------------------------------
+    */
+
+    --color-success: #48C58B;
+    --color-success-soft: #18382E;
+
+    --color-warning: #F1B652;
+    --color-warning-soft: #3C311C;
+
+    --color-danger: #F07480;
+    --color-danger-soft: #402429;
+
+    --color-info: #78A7F1;
+    --color-info-soft: #202F49;
+
+    /*
+    |--------------------------------------------------------------------------
+    | Route
+    |--------------------------------------------------------------------------
+    */
+
+    --color-route: #78A7F1;
+    --color-origin: #78A7F1;
+    --color-destination: #48C58B;
+
+    /*
+    |--------------------------------------------------------------------------
+    | Shadows
+    |--------------------------------------------------------------------------
+    */
+
+    --shadow-xs:
+      0 1px 2px rgba(0, 0, 0, 0.18);
+
+    --shadow-sm:
+      0 4px 10px rgba(0, 0, 0, 0.20);
+
+    --shadow-card:
+      0 10px 30px rgba(0, 0, 0, 0.24);
+
+    --shadow-floating:
+      0 18px 44px rgba(0, 0, 0, 0.35);
+
+    color-scheme: dark;
+  }
+
+
+  /* ============================================================
+     DOCUMENT
+     ============================================================ */
+
+  html {
+    min-height: 100%;
+    background: var(--bg-main);
+
+    /*
+    Evita rebotes horizontales accidentales en móviles.
+    */
+    overflow-x: hidden;
+
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    overflow-x: hidden;
+
+    background-color: var(--bg-main);
+    color: var(--text-main);
+
+    font-family:
+      Inter,
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+
+    font-synthesis: none;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /*
+    Evita el highlight azul/gris típico del navegador
+    al tocar botones en Android.
+    */
+    -webkit-tap-highlight-color: transparent;
+
+    /*
+    Mejora la sensación de app instalada.
+    */
+    overscroll-behavior-y: none;
+
+    transition:
+      background-color 200ms ease,
+      color 200ms ease;
+  }
+
+
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background: var(--bg-main);
+  }
+
+
+  /* ============================================================
+     FORM ELEMENTS
+     ============================================================ */
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+
+  button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+
+  button,
+  [role="button"] {
+    cursor: pointer;
+  }
+
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+
+
+  input,
+  textarea,
+  select {
+    color: var(--text-main);
+  }
+
+
+  ::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+  }
+
+
+  /* ============================================================
+     SELECTION
+     ============================================================ */
+
+  ::selection {
+    background: var(--color-primary-soft);
+    color: var(--color-primary);
+  }
+
+
+  /* ============================================================
+     SCROLLBAR
+     ============================================================ */
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color:
+      var(--bg-card-border)
+      transparent;
+  }
+
+
+  *::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+
+  *::-webkit-scrollbar-thumb {
+    background: var(--bg-card-border);
+    border-radius: 9999px;
+  }
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| REUSABLE GOCAST COMPONENT CLASSES
+|--------------------------------------------------------------------------
+|
+| No es obligatorio utilizarlas inmediatamente.
+| Las iremos usando cuando modifiquemos cada pantalla.
+|
+*/
+
+@layer components {
+
+  /* ============================================================
+     APP CONTAINER
+     ============================================================ */
+
+  .gocast-app {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background: var(--bg-main);
+    color: var(--text-main);
+  }
+
+
+  /*
+  Contenedor principal mobile-first.
+
+  En móvil ocupa todo.
+  En escritorio mantenemos el comportamiento de teléfono.
+  */
+
+  .gocast-container {
+    width: 100%;
+    max-width: 448px;
+    margin-inline: auto;
+  }
+
+
+  /* ============================================================
+     CARDS
+     ============================================================ */
+
+  .gocast-card {
+    border: 1px solid var(--bg-card-border);
+    border-radius: var(--radius-xl);
+
+    background: var(--bg-card);
+
+    box-shadow: var(--shadow-card);
+
+    transition:
+      background-color 200ms ease,
+      border-color 200ms ease,
+      box-shadow 200ms ease;
+  }
+
+
+  .gocast-card-flat {
+    border: 1px solid var(--bg-card-border);
+    border-radius: var(--radius-lg);
+
+    background: var(--bg-card);
+
+    transition:
+      background-color 200ms ease,
+      border-color 200ms ease;
+  }
+
+
+  /* ============================================================
+     PRIMARY BUTTON
+     ============================================================ */
+
+  .gocast-button-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+
+    min-height: 52px;
+
+    border: none;
+    border-radius: var(--radius-lg);
+
+    padding-inline: 1.25rem;
+
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+
+    font-weight: 700;
+
+    box-shadow:
+      0 10px 24px
+      color-mix(
+        in srgb,
+        var(--color-primary) 24%,
+        transparent
+      );
+
+    transition:
+      transform 150ms ease,
+      background-color 150ms ease,
+      box-shadow 150ms ease;
+  }
+
+
+  .gocast-button-primary:hover {
+    background: var(--color-primary-hover);
+  }
+
+
+  .gocast-button-primary:active {
+    transform: scale(0.98);
+    background: var(--color-primary-active);
+  }
+
+
+  .gocast-button-primary:disabled {
+    opacity: 0.45;
+    box-shadow: none;
+  }
+
+
+  /* ============================================================
+     SECONDARY BUTTON
+     ============================================================ */
+
+  .gocast-button-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+
+    min-height: 52px;
+
+    border: 1px solid var(--bg-card-border);
+    border-radius: var(--radius-lg);
+
+    padding-inline: 1.25rem;
+
+    background: var(--bg-card);
+    color: var(--text-main);
+
+    font-weight: 700;
+
+    transition:
+      transform 150ms ease,
+      background-color 150ms ease,
+      border-color 150ms ease;
+  }
+
+
+  .gocast-button-secondary:active {
+    transform: scale(0.98);
+  }
+
+
+  /* ============================================================
+     STATUS CHIP
+     ============================================================ */
+
+  .gocast-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+
+    min-height: 28px;
+
+    border-radius: var(--radius-full);
+
+    padding-inline: 0.7rem;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+
+  .gocast-status-success {
+    background: var(--color-success-soft);
+    color: var(--color-success);
+  }
+
+
+  .gocast-status-warning {
+    background: var(--color-warning-soft);
+    color: var(--color-warning);
+  }
+
+
+  .gocast-status-danger {
+    background: var(--color-danger-soft);
+    color: var(--color-danger);
+  }
+
+
+  .gocast-status-info {
+    background: var(--color-info-soft);
+    color: var(--color-info);
+  }
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| ACCESSIBILITY
+|--------------------------------------------------------------------------
+*/
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}

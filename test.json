@@ -1,0 +1,38 @@
+{
+  "success": true,
+  "modo": "vista_previa",
+  "message": "URL API no configurada. Mostrando JSON de prueba.",
+  "json": {
+    "servicio_id": 9999,
+    "expediente_id": 8888,
+    "numero_expediente": "EXP-TEST-000001",
+    "proveedor": {
+      "id": 12,
+      "nombre": "Proveedor de Prueba",
+      "telefono": "04129728222"
+    },
+    "vehiculo": {
+      "placa": "TEST123",
+      "marca": "Toyota",
+      "modelo": "Corolla",
+      "anno": "2020",
+      "color": "Blanco"
+    },
+    "servicio": {
+      "falla": "Vehículo no enciende",
+      "precio": 45
+    },
+    "origen": {
+      "lat": 10.4931716713543,
+      "lng": -66.8804454400391,
+      "referencia": "Origen de prueba"
+    },
+    "destino": {
+      "lat": 10.5096963086702,
+      "lng": -66.897959373071,
+      "referencia": "Destino de prueba"
+    },
+    "estado": "proveedor_asignado",
+    "ambiente": "prueba"
+  }
+}
